@@ -15,7 +15,7 @@ public class Transliterator {
     }
 
     String translateOneSymbol(char n) {
-        for(int i = 0; i < example.length; i++) {
+        for (int i = 0; i < example.length; i++) {
             if (example[i] == Character.toLowerCase(n)) {
                 if (Character.isUpperCase(n)) {
                     if (translation[i].equals("")) {
@@ -45,7 +45,7 @@ public class Transliterator {
         return new Transliterator(example, translation);
     }
 
-    public void translateFile(String read, String print ) throws Exception {
+    public void translateFile(String read, String print) throws Exception {
         String strings = Files.readString(Path.of(read));
         strings = translate(strings);
         try (PrintStream b = new PrintStream(print)) {
