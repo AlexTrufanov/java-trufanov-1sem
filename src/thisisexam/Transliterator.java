@@ -1,9 +1,8 @@
-package thisIsExam;
+package thisisexam;
 
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class Transliterator {
     char[] example;
@@ -21,7 +20,7 @@ public class Transliterator {
                     if (translation[i].equals("")) {
                         return "";
                     }
-                    return String.valueOf(Character.toUpperCase(translation[i].charAt(0))) + translation[i].substring(1);
+                    return Character.toUpperCase(translation[i].charAt(0)) + translation[i].substring(1);
                 }
                 return translation[i];
             }
@@ -31,12 +30,13 @@ public class Transliterator {
     }
 
     String translate(String particle) {
+        String line = "";
         String[] chars = particle.split("");
         char[] symbol = particle.toCharArray();
         for (int i = 0; i < symbol.length; i++) {
-            particle = particle.replace(chars[i], translateOneSymbol(symbol[i]));
+            line = particle.replace(chars[i], translateOneSymbol(symbol[i]));
         }
-        return particle;
+        return line;
     }
 
     public static Transliterator createICAO_DOC_9303() {

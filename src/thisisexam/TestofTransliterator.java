@@ -1,4 +1,4 @@
-package thisIsExam;
+package thisisexam;
 
 public class TestofTransliterator {
     public static void main(String[] args) throws Exception {
@@ -26,5 +26,8 @@ public class TestofTransliterator {
         System.out.println(t.translate("Яблоко"));
         System.out.println(t.translate("ПАРАШЮТ"));
         t.translateFile("exam/a.txt", "exam/b.txt");
+
+        Transliterator tt = new Transliterator(new char[]{'a'}, new String[]{"aa"});
+        System.out.println(tt.translate("aaaa"));
     }
 }
